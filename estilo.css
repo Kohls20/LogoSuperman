@@ -1,210 +1,216 @@
-body{
-    margin: 0;
+* {
     padding: 0;
-    background-color: black;
+    margin: 0;
 }
 
-.principal{
+body {
+    background-color: black;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/*
-    parte vermalha de tras do simbolo (margem vermelha)
-    z-index = 0
-*/
-.div1{
-    position: absolute;
-    top: 200px;
-    z-index: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 30px solid transparent;
-    border-right: 300px solid transparent;
-    border-left: 300px solid transparent;
-    border-top: 400px solid red;
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.div2{
+
+.absolute {
     position: absolute;
-    top: -20px;
+}
+
+.bgRed,
+.bgYellow {
+    display: flex;
+    flex-direction: column;
+}
+
+/*parte vermalha de tras do simbolo (margem vermelha) z-index = 0*/
+.bgRed {
     z-index: 0;
-    width: 400px;
-    height: 119px;
+}
+
+.div1,
+.div2 {
+    position: relative;
+}
+
+.div1 {
     border-top: 1px solid transparent;
     border-right: 100px solid transparent;
     border-left: 100px solid transparent;
-    border-bottom: 100px solid red;
+    border-bottom: 90px solid red;
 }
 
-/*
-    parte amarela de tras (background)
-    z-index = 1
-*/
-.div3{
-    position: absolute;
-    top: 200px;
-    z-index: 1;
+.div2 {
     width: 0;
     height: 0;
-    border-bottom: 30px solid transparent;
-    border-right: 285px solid transparent;
-    border-left: 285px solid transparent;
-    border-top: 380px solid yellow;
+    border-bottom: 1px solid transparent;
+    border-right: 200px solid transparent;
+    border-left: 200px solid transparent;
+    border-top: 250px solid red;
 }
-.div4{
-    position: absolute;
-    top: -100px;
+
+/*parte amarela de tras (background)    z-index = 1*/
+.bgYellow {
     z-index: 1;
-    width: 390px;
-    height: 120px;
-    border-top: 90px solid transparent;
+}
+
+.div3,
+.div4 {
+    position: relative;
+}
+
+.div3 {
+    border-top: 1px solid transparent;
     border-right: 90px solid transparent;
     border-left: 90px solid transparent;
-    border-bottom: 90px solid yellow;
+    border-bottom: 80px solid yellow;
+}
+.div4 {
+    border-bottom: 1px solid transparent;
+    border-right: 190px solid transparent;
+    border-left: 190px solid transparent;
+    border-top: 240px solid yellow;
 }
 
+/*elipse vermelha (parte de cima do 'S')    Z-index = 2*/
 
-/*
-    elipse vermelha (parte de cima do 'S')
-    Z-index = 2
-*/
-.div5{
-    position: absolute;
+.div5 {
+    position: relative;
     z-index: 2;
-    top: 100px;
+    top: -50px;
     border-radius: 50%;
     background: red;
-    width: 470px;
-    height: 300px;
+    width: 300px;
+    height: 230px;
 }
 
-/*
-    elipse amarela (parte amarela do centro superior do 'S')
-    Z-index = 3
-*/
-.div6{
-    position: absolute;
+/*elipse amarela (parte amarela do centro superior do 'S')  Z-index = 3*/
+
+.div6 {
+    position: relative;
     z-index: 3;
-    top: 140px;
+    top: -90px;
     border-radius: 50% 50% 0 50%;
-    width: 250px;
-    height: 100px;
+    width: 170px;
+    height: 90px;
     background: yellow;
+    left: -15px;
 }
-
-
-.div7{
-    position: absolute;
-    top: 320px;
+/*triangulo amarelo inferior*/
+.div7 {
+    position: relative;
+    top: 92px;
     z-index: 2;
-    width: 0;
-    height: 0;
-    border-bottom: 30px solid transparent;
-    border-right: 195px solid transparent;
-    border-left: 195px solid transparent;
-    border-top: 260px solid yellow;
+    border-bottom: 1px solid transparent;
+    border-right: 110px solid transparent;
+    border-left: 110px solid transparent;
+    border-top: 140px solid yellow;
 }
 
 /*cabeça do "S"*/
-.div8{
-  background-color: red;
-  position: relative;
-  z-index: 2;
-  width: 80px;
-  height: 80px;
-  top: 110px;
-  left: 350px;
-}
 
-.div9{
+.div8 {
+    background-color: red;
     position: relative;
     z-index: 3;
-    top: 190px;
-    left: 145px;
+    width: 30px;
+    height: 60px;
+    top: -132px;
+    left: 85px;
+}
+
+.div9 {
+    position: relative;
+    z-index: 3;
+    top: -60px;
+    left: 70px;
     background: yellow;
-    width: 200px;
-    height: 130px;
-
+    width: 140px;
+    height: 80px;
 }
 
-/*triandigo amarelo no canto */
-.div10{
+/*triandigo amarelo no canto*/
+.div10 {
     position: relative;
     z-index: 3;
-    left: 145px;
-    top: 110px;
+    left: 190px;
+    top: -62px;
     width: 0;
     height: 0;
-    border-bottom: 120px solid transparent;
+    border-bottom: 115px solid transparent;
     border-right: 90px solid transparent;
-    border-top: 90px solid transparent;
+    border-top: 80px solid transparent;
     border-left: 90px solid yellow;
 }
 
 /*parte central do "S"*/
-.div11{
-    position:absolute;
+.div11 {
+    position: relative;
     z-index: 7;
-    top: 240px;
-    width: 395px;
-    height: 150px;
+    top: 5px;
+    width: 250px;
+    height: 100px;
     background: red;
+    border-radius: 50%;
+}
+/*Parte de baixo do "S"*/
+.div12 {
+    background: red;
+    position: absolute;
+    z-index: 5;
+    top: 86px;
+    left: -51px;
+    width: 103px;
+    height: 30px;
+    border-radius: 0 0 45% 45%;
+}
+
+.div13 {
+    background: red;
+    position: absolute;
+    right: 0;
+    left: 20px;
+    border-radius: 0 0 10px 0;
+    top: 48px;
+    z-index: 4;
+    width: 40px;
+    height: 50px;
+}
+
+.div14 {
+    position: absolute;
+    z-index: 4;
+    top: 10px;
+    left: 49px;
+    border-bottom: 90px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 0;
+    border-left: 70px solid red;
+}
+
+.div15 {
+    background: yellow;
+    position: relative;
+    z-index: 5;
+    top: 70px;
+    left: 22px;
+    width: 90px;
+    height: 32px;
     border-radius: 50%;
 }
 
 /*pé do "S"*/
-.div12{
+.div16 {
     background: red;
-    position: absolute;
+    position: relative;
     z-index: 6;
-    left: 560px;
-    top: 410px;
-    width: 80px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-/*Parte de baixo do "S"*/
-.div13{
-    background: red;
-    position: absolute;
-    z-index: 5;
-    top: 430px;
-    width: 200px;
-    height: 50px;
-    border-radius: 40%;
-}
-
-.div14{
-    position: absolute;
-    z-index: 4;
-    right: 370px;
-    top: 340px;
-    width: 0;
-    height: 0;
-    border-bottom: 140px solid transparent;
-    border-right: 120px solid transparent;
-    border-top: 0px solid transparent;
-    border-left: 105px solid red;
-}
-
-.div15{
-    background: yellow;
-    position: absolute;
-    z-index: 5;
-    top: 389px;
-    right: 590px;
-    width: 100px;
-    height: 41px;
-    border-radius: 50%;
-}
-
-.div16{
-    background: red;
-    position: absolute;
-    right: 570px;
-    top: 370px;
-    z-index: 4;/*4*/
+    right: 20px;
+    top: 90px;
     width: 70px;
-    height: 80px;
+    height: 50px;
+    border-radius: 50%;
 }
